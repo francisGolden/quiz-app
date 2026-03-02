@@ -1,6 +1,15 @@
-Welcome to your new TanStack Start app! 
+# Quiz app
 
-# Getting Started
+To-do list:
+- [] Page routing: Dashboard, Quiz, Profile
+- [] Quiz business logic
+- [] TBD
+
+----
+
+
+
+# TANSTACK ROUTER: Getting Started
 
 To run this application:
 
