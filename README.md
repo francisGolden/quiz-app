@@ -1,9 +1,10 @@
 # Quiz app
 
 To-do list:
-- [] Page routing: Dashboard, Quiz, Profile
-- [] Quiz business logic
-- [] TBD
+- Remove Tailwind
+- Page routing: Dashboard, Quiz, Profile
+- Quiz business logic
+- TBD
 
 ----
 

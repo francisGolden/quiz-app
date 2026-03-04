@@ -32,7 +32,7 @@ function BlogIndex() {
   const featured = postsByDate[0]
   const posts = postsByDate.slice(1)
   return (
-    <main className="page-wrap px-4 pb-8 pt-14">
+    <main className="">
       hello world, blog index
     </main>
   )
