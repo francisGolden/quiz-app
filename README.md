@@ -2,7 +2,7 @@
 
 To-do list:
 - ~~Remove Tailwind~~
-- Page routing: Dashboard, Quiz, Profile
+- ~~Page routing: Dashboard, Quiz, Profile~~
 - Quiz business logic
 - TBD
 
