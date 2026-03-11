@@ -1,7 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import {
-  createFormHook,
-  createFormHookContexts,
   useForm,
 } from '@tanstack/react-form'
 
@@ -11,9 +9,11 @@ export const Route = createFileRoute('/quiz')({
 
 function RouteComponent() {
   const form = useForm({
+    defaultValues: {
+      esempio: ""
+    },
     onSubmit: async ({ value }) => {
       console.log(value)
-      console.log("ciao animali")
     },
   })
 
@@ -28,12 +28,30 @@ function RouteComponent() {
         <h3>Quiz body</h3>
         <div>
           <h4>Quiz content</h4>
-          <form onSubmit={(e) => {
-            e.stopPropagation()
-            e.preventDefault()
-            form.handleSubmit()
-          }}>
-            <button type='submit'>Invia</button>
+          <form
+            onSubmit={(e) => {
+              e.stopPropagation()
+              e.preventDefault()
+              form.handleSubmit()
+            }}
+          >
+            <form.Field
+              name="esempio"
+              children={(field) => {
+                return (
+                  <>
+                    <label htmlFor={field.name}>Esempio label</label>
+                    <input
+                      type="text"
+                      name={field.name}
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                    />
+                  </>
+                )
+              }}
+            ></form.Field>
+            <button type="submit">Invia</button>
           </form>
         </div>
       </div>
