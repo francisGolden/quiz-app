@@ -10,7 +10,8 @@ export const Route = createFileRoute('/quiz')({
 function RouteComponent() {
   const form = useForm({
     defaultValues: {
-      esempio: ""
+      esempio: "",
+      selectOption: "",
     },
     onSubmit: async ({ value }) => {
       console.log(value)
@@ -51,6 +52,19 @@ function RouteComponent() {
                 )
               }}
             ></form.Field>
+            <form.Field name='selectOption' children={(field) => {
+              return (
+                <>
+                  <label htmlFor={field.name}>Select label</label>
+                  <select name={field.name} value={field.state.value} onChange={(e) => field.handleChange(e.target.value)}>
+                    <option value="">Select a value...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </>
+              )
+            }}></form.Field>
             <button type="submit">Invia</button>
           </form>
         </div>
