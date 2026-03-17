@@ -3,7 +3,7 @@
 To-do list:
 - ~~Remove Tailwind~~
 - ~~Page routing: Dashboard, Quiz, Profile~~
-- Quiz business logic
+- ~~Quiz business logic basics~~
 - Create quiz component for MCQ (accepts question, choices, correct answer, explanation, etc)
 - Add data persistency (with LowDB or something else)
 - Add state persistency (native or library?)
