@@ -6,6 +6,8 @@ To-do list:
 - Quiz business logic
 - Create quiz component for MCQ (accepts question, choices, correct answer, explanation, etc)
 - Add data persistency (with LowDB or something else)
+- Add state persistency (native or library?)
+- Quiz loop for exam and/or practice
 - Add links to different routes in the dashboard page
 - TBD
 
