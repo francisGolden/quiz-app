@@ -4,8 +4,9 @@ To-do list:
 - ~~Remove Tailwind~~
 - ~~Page routing: Dashboard, Quiz, Profile~~
 - Quiz business logic
-- Create quiz component (accepts question, choices, correct answer, explanation, etc)
+- Create quiz component for MCQ (accepts question, choices, correct answer, explanation, etc)
 - Add data persistency (with LowDB or something else)
+- Add links to different routes in the dashboard page
 - TBD
 
 ----
