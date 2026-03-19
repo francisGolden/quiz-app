@@ -36,22 +36,6 @@ function RouteComponent() {
               form.handleSubmit()
             }}
           >
-            <form.Field
-              name="esempio"
-              children={(field) => {
-                return (
-                  <>
-                    <label htmlFor={field.name}>Esempio label</label>
-                    <input
-                      type="text"
-                      name={field.name}
-                      value={field.state.value}
-                      onChange={(e) => field.handleChange(e.target.value)}
-                    />
-                  </>
-                )
-              }}
-            ></form.Field>
             <form.Field name='selectOption' children={(field) => {
               return (
                 <>
