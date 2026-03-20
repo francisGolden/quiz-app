@@ -1,7 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import {
-  useForm,
-} from '@tanstack/react-form'
+import { useForm } from '@tanstack/react-form'
 
 export const Route = createFileRoute('/quiz')({
   component: RouteComponent,
@@ -10,8 +8,8 @@ export const Route = createFileRoute('/quiz')({
 function RouteComponent() {
   const form = useForm({
     defaultValues: {
-      esempio: "",
-      selectOption: "",
+      esempio: '',
+      selectOption: '',
     },
     onSubmit: async ({ value }) => {
       console.log(value)
@@ -36,19 +34,42 @@ function RouteComponent() {
               form.handleSubmit()
             }}
           >
-            <form.Field name='selectOption' children={(field) => {
-              return (
-                <>
-                  <label htmlFor={field.name}>Select label</label>
-                  <select name={field.name} value={field.state.value} onChange={(e) => field.handleChange(e.target.value)}>
-                    <option value="">Select a value...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </>
-              )
-            }}></form.Field>
+            <form.Field
+              name="selectOption"
+              children={(field) => {
+                return (
+                  <>
+                    <div>
+                      Question here Lorem ipsum, dolor sit amet consectetur
+                      adipisicing elit. Dolorem recusandae vel officiis totam
+                      magnam commodi laborum maxime dolor eligendi, animi
+                      delectus. Quidem aperiam nobis sunt rerum consequatur
+                      incidunt odio cumque.
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        name={field.name}
+                        id={field.name}
+                        value="ciao"
+                        onChange={(e) => field.handleChange(e.target.value)}
+                      />
+                      <label htmlFor="ciao">Ciao</label>
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        name={field.name}
+                        id={field.name}
+                        value="peppa"
+                        onChange={(e) => field.handleChange(e.target.value)}
+                      />
+                      <label htmlFor="peppa">Peppa</label>
+                    </div>
+                  </>
+                )
+              }}
+            ></form.Field>
             <button type="submit">Invia</button>
           </form>
         </div>
