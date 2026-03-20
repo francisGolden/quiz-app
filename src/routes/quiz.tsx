@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useForm } from '@tanstack/react-form'
 import Quiz from '#/components/Quiz'
 
 export const Route = createFileRoute('/quiz')({

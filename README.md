@@ -4,7 +4,8 @@ To-do list:
 - ~~Remove Tailwind~~
 - ~~Page routing: Dashboard, Quiz, Profile~~
 - ~~Quiz business logic basics~~
-- Create quiz component for MCQ (accepts question, choices, correct answer, explanation, etc)
+- ~~Create quiz component for MCQ (accepts question, choices) RADIO~~
+- Create quiz component for MCQ (correct answer, explanation, etc) RADIO
 - Add data persistency (with LowDB or something else)
 - Add state
 - Add context (state or library?)
