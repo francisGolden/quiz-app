@@ -1,20 +1,20 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useForm } from '@tanstack/react-form'
+import Quiz from '#/components/Quiz'
 
 export const Route = createFileRoute('/quiz')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
-  const form = useForm({
-    defaultValues: {
-      esempio: '',
-      selectOption: '',
-    },
-    onSubmit: async ({ value }) => {
-      console.log(value)
-    },
-  })
+  const question = "Domanda provafjdlkjfklasjflkjsdakfjkldasjfklas"
+  const options = [{
+    optionText: "Option text 1", optionId: "Id1", optionValue: "1"
+  }, {
+    optionText: "Option text 2", optionId: "Id2", optionValue: "2"
+  }, {
+    optionText: "Option text 3", optionId: "Id3", optionValue: "3"
+  }]
 
   return (
     <div>
@@ -27,51 +27,7 @@ function RouteComponent() {
         <h3>Quiz body</h3>
         <div>
           <h4>Quiz content</h4>
-          <form
-            onSubmit={(e) => {
-              e.stopPropagation()
-              e.preventDefault()
-              form.handleSubmit()
-            }}
-          >
-            <form.Field
-              name="selectOption"
-              children={(field) => {
-                return (
-                  <>
-                    <div>
-                      Question here Lorem ipsum, dolor sit amet consectetur
-                      adipisicing elit. Dolorem recusandae vel officiis totam
-                      magnam commodi laborum maxime dolor eligendi, animi
-                      delectus. Quidem aperiam nobis sunt rerum consequatur
-                      incidunt odio cumque.
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        name={field.name}
-                        id={field.name}
-                        value="ciao"
-                        onChange={(e) => field.handleChange(e.target.value)}
-                      />
-                      <label htmlFor="ciao">Ciao</label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        name={field.name}
-                        id={field.name}
-                        value="peppa"
-                        onChange={(e) => field.handleChange(e.target.value)}
-                      />
-                      <label htmlFor="peppa">Peppa</label>
-                    </div>
-                  </>
-                )
-              }}
-            ></form.Field>
-            <button type="submit">Invia</button>
-          </form>
+          <Quiz question={question} options={options} />
         </div>
       </div>
       <div>
