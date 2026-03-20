@@ -1,10 +1,20 @@
 import { createFileRoute } from '@tanstack/react-router'
+import Quiz from '#/components/Quiz'
 
 export const Route = createFileRoute('/quiz')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
+  const question = "Domanda provafjdlkjfklasjflkjsdakfjkldasjfklas"
+  const options = [{
+    optionText: "Option text 1", optionId: "Id1", optionValue: "1"
+  }, {
+    optionText: "Option text 2", optionId: "Id2", optionValue: "2"
+  }, {
+    optionText: "Option text 3", optionId: "Id3", optionValue: "3"
+  }]
+
   return (
     <div>
       <div>
@@ -15,8 +25,8 @@ function RouteComponent() {
       <div>
         <h3>Quiz body</h3>
         <div>
-            <h4>Quiz content</h4>
-            <div>Placeholder</div>
+          <h4>Quiz content</h4>
+          <Quiz question={question} options={options} />
         </div>
       </div>
       <div>
