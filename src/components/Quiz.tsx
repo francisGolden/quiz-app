@@ -49,26 +49,6 @@ export default function Quiz({ question, options }: QuizProps) {
                     </div>
                   )
                 })}
-                {/* <div>
-                  <input
-                    type="radio"
-                    name={field.name}
-                    id={field.name}
-                    value="ciao"
-                    onChange={(e) => field.handleChange(e.target.value)}
-                  />
-                  <label htmlFor="ciao">Ciao</label>
-                </div>
-                <div>
-                  <input
-                    type="radio"
-                    name={field.name}
-                    id={field.name}
-                    value="peppa"
-                    onChange={(e) => field.handleChange(e.target.value)}
-                  />
-                  <label htmlFor="peppa">Peppa</label>
-                </div> */}
               </>
             )
           }}
