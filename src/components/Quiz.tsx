@@ -4,12 +4,14 @@ import type { QuizProps } from '#/types/QuizTypes'
 
 export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
   const {question, options, correctAnswer} = quizObject
+  const results = []
   const form = useForm({
     defaultValues: {
       selectedOption: '',
     },
     onSubmit: async ({ value }) => {
-      console.log(correctAnswer === value.selectedOption) // now the result should be saved somewhere
+      results.push({question, correctAnswer, selectedOption: value.selectedOption})
+      console.log(results)
     },
   })
   
