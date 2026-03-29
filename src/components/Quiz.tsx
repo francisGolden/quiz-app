@@ -3,15 +3,16 @@ import type { QuizProps } from '#/types/QuizTypes'
 
 
 export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
+  const {question, options, correctAnswer} = quizObject
   const form = useForm({
     defaultValues: {
       selectedOption: '',
     },
     onSubmit: async ({ value }) => {
-      console.log(value)
+      console.log(correctAnswer === value.selectedOption)
     },
   })
-  const {question, options} = quizObject
+  
   return (
     <>
       <form

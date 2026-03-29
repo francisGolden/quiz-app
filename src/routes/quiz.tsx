@@ -26,7 +26,7 @@ function RouteComponent() {
         optionValue: '3',
       },
     ],
-    correctAnswer: 'Id3',
+    correctAnswer: '3',
     id: 'rdsr',
   }
 
