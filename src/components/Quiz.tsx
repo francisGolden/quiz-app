@@ -1,13 +1,8 @@
 import { useForm } from '@tanstack/react-form'
+import type { QuizProps } from '#/types/QuizTypes'
 
-interface QuizProps {
-  question: string;
-  options: { optionText: string; optionId: string; optionValue: string }[];
-  correctAnswer?: string;
-  explanation?: string;
-}
 
-export default function Quiz({ question, options }: QuizProps) {
+export default function Quiz({ question, options, correctAnswer, id }: QuizProps) {
   const form = useForm({
     defaultValues: {
       selectedOption: '',

@@ -14,6 +14,8 @@ function RouteComponent() {
   }, {
     optionText: "Option text 3", optionId: "Id3", optionValue: "3"
   }]
+  const correctAnswer = "Id3"
+  const id = "rdsr"
 
   return (
     <div>
@@ -26,7 +28,7 @@ function RouteComponent() {
         <h3>Quiz body</h3>
         <div>
           <h4>Quiz content</h4>
-          <Quiz question={question} options={options} />
+          <Quiz question={question} options={options} correctAnswer={correctAnswer} id={id} />
         </div>
       </div>
       <div>
