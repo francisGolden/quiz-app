@@ -3,7 +3,7 @@ import type { QuizProps, Answers } from '#/types/QuizTypes'
 
 
 export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
-  const {question, options, correctAnswer} = quizObject
+  const {question, options} = quizObject
   const answers: Answers = []
   const form = useForm({
     defaultValues: {
@@ -11,7 +11,6 @@ export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
     },
     onSubmit: async ({ value }) => {
       answers.push({...quizObject, givenAnswer: value.selectedOption})
-      console.log(answers)
     },
   })
   
