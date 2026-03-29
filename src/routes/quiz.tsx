@@ -1,21 +1,34 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Quiz from '#/components/Quiz'
+import type { QuizProps } from '#/types/QuizTypes'
 
 export const Route = createFileRoute('/quiz')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
-  const question = "Domanda provafjdlkjfklasjflkjsdakfjkldasjfklas"
-  const options = [{
-    optionText: "Option text 1", optionId: "Id1", optionValue: "1"
-  }, {
-    optionText: "Option text 2", optionId: "Id2", optionValue: "2"
-  }, {
-    optionText: "Option text 3", optionId: "Id3", optionValue: "3"
-  }]
-  const correctAnswer = "Id3"
-  const id = "rdsr"
+  const quizObject: QuizProps = {
+    question: 'Domanda provafjdlkjfklasjflkjsdakfjkldasjfklas',
+    options: [
+      {
+        optionText: 'Option text 1',
+        optionId: 'Id1',
+        optionValue: '1',
+      },
+      {
+        optionText: 'Option text 2',
+        optionId: 'Id2',
+        optionValue: '2',
+      },
+      {
+        optionText: 'Option text 3',
+        optionId: 'Id3',
+        optionValue: '3',
+      },
+    ],
+    correctAnswer: 'Id3',
+    id: 'rdsr',
+  }
 
   return (
     <div>
@@ -28,7 +41,7 @@ function RouteComponent() {
         <h3>Quiz body</h3>
         <div>
           <h4>Quiz content</h4>
-          <Quiz question={question} options={options} correctAnswer={correctAnswer} id={id} />
+          <Quiz quizObject={quizObject} />
         </div>
       </div>
       <div>
