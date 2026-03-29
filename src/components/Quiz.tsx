@@ -1,17 +1,17 @@
 import { useForm } from '@tanstack/react-form'
-import type { QuizProps } from '#/types/QuizTypes'
+import type { QuizProps, Answers } from '#/types/QuizTypes'
 
 
 export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
   const {question, options, correctAnswer} = quizObject
-  const results = []
+  const answers: Answers = []
   const form = useForm({
     defaultValues: {
       selectedOption: '',
     },
     onSubmit: async ({ value }) => {
-      results.push({question, correctAnswer, selectedOption: value.selectedOption})
-      console.log(results)
+      answers.push({...quizObject, givenAnswer: value.selectedOption})
+      console.log(answers)
     },
   })
   

@@ -6,6 +6,12 @@ export interface QuizProps {
   id: string;
 }
 
+export interface Answer extends QuizProps {
+    givenAnswer: string;
+}
+
+export type Answers = Answer[]
+
 export interface Option {
     optionText: string;
     optionId: string;
