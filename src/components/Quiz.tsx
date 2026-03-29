@@ -9,7 +9,7 @@ export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
       selectedOption: '',
     },
     onSubmit: async ({ value }) => {
-      console.log(correctAnswer === value.selectedOption)
+      console.log(correctAnswer === value.selectedOption) // now the result should be saved somewhere
     },
   })
   
