@@ -7,6 +7,8 @@ To-do list:
 - ~~Create quiz component for MCQ (accepts question, choices) RADIO~~
 - ~~Create quiz component for MCQ (correct answer, explanation, etc) RADIO~~
 - TO-DO: Add data persistency (with LowDB or something else)
+- TO-DO: Recorded Sessions
+- To-DO: Analytics page getting data from recorded sessions 
 - Add state
 - Add context (state or library?)
 - Quiz loop for exam and/or practice
