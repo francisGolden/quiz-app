@@ -1,12 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Quiz from '#/components/Quiz'
 import type { QuizProps } from '#/types/QuizTypes'
+import { db } from '#/db/initDb'
 
 export const Route = createFileRoute('/quiz')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
+  console.log(db.data)
   const quizObject: QuizProps = {
     question: 'Domanda provafjdlkjfklasjflkjsdakfjkldasjfklas',
     options: [
