@@ -1,10 +1,10 @@
 import { useForm } from '@tanstack/react-form'
-import type { QuizProps, Answers } from '#/types/QuizTypes'
+import type { QuizProps, AnswerList } from '#/types/QuizTypes'
 
 
 export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
   const {question, options} = quizObject
-  const answers: Answers = []
+  const answers: AnswerList = []
   const form = useForm({
     defaultValues: {
       selectedOption: '',

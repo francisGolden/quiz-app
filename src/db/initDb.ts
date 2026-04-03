@@ -2,11 +2,11 @@ import { LocalStorage } from "lowdb/browser"
 import { LowSync } from "lowdb"
 
 export interface Data {
-  questions: []
+  quizList: []
 }
 
 const defaultData: Data = {
-    questions: []
+    quizList: []
 }
 
 const adapter = new LocalStorage<Data>("quiz-db")

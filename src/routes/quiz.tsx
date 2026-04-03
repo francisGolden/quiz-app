@@ -8,7 +8,10 @@ export const Route = createFileRoute('/quiz')({
 })
 
 function RouteComponent() {
-  console.log(db.data)
+  db.update((data) => {
+    data.quizList.push({key1: "value1"})
+  })
+  console.log(db)
   const quizObject: QuizProps = {
     question: 'Domanda provafjdlkjfklasjflkjsdakfjkldasjfklas',
     options: [
