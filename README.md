@@ -6,6 +6,7 @@ To-do list:
 - ~~Quiz business logic basics~~
 - ~~Create quiz component for MCQ (accepts question, choices) RADIO~~
 - ~~Create quiz component for MCQ (correct answer, explanation, etc) RADIO~~
+- TO-DO: Refactor Quiz.tsx in order to get just optionText and optionId. optionValue is not needed anymore
 - TO-DO: Add data persistency (with LowDB or something else)
 - TO-DO: Recorded Sessions
 - To-DO: Analytics page getting data from recorded sessions 

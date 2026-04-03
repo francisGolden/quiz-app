@@ -8,9 +8,34 @@ export const Route = createFileRoute('/quiz')({
 })
 
 function RouteComponent() {
+  const question: QuizProps = {
+      "question": "Which year was the European Union formally established?",
+      "options": [
+        {
+          "optionId": "id1",
+          "optionText": "1992",
+          "optionValue": ""
+        },
+        {
+          "optionId": "id2",
+          "optionText": "1985"
+        },
+        {
+          "optionId": "id3",
+          "optionText": "1995"
+        },
+        {
+          "optionId": "id4",
+          "optionText": "2000"
+        }
+      ],
+      "correctAnswer": "id1",
+      "id": "quiz1"
+    }
   db.update((data) => {
-    data.quizList.push({key1: "value1"})
+    data.quizList.push(question)
   })
+
   console.log(db)
   const quizObject: QuizProps = {
     question: 'Domanda provafjdlkjfklasjflkjsdakfjkldasjfklas',
