@@ -11,6 +11,7 @@ export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
     },
     onSubmit: async ({ value }) => {
       answers.push({...quizObject, givenAnswer: value.selectedOption})
+      console.log(answers)
     },
   })
   
@@ -29,19 +30,19 @@ export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
             return (
               <>
                 <div>{question}</div>
-                {options.map(({ optionId, optionText, optionValue }) => {
+                {options.map(({ optionId, optionText }) => {
                   return (
                     <div key={optionId}>
                       <input
                         type="radio"
-                        name={optionId}
+                        name={optionText}
                         id={optionId}
-                        value={optionValue}
+                        value={optionId}
                         onChange={(e) => {
                             console.log("changed value to", e.target.value)
                             field.handleChange(e.target.value)
                         }}
-                        checked={field.state.value === optionValue}
+                        checked={field.state.value === optionId}
                       />
                       <label htmlFor={optionId}>{optionText}</label>
                     </div>

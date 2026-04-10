@@ -15,7 +15,6 @@ export type AnswerList = Answer[]
 export interface Option {
     optionText: string;
     optionId: string;
-    optionValue: string;
 }
 
 export type QuizList = QuizProps[]
