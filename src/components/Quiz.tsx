@@ -26,6 +26,7 @@ export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
   
   return (
     <>
+      <div>Hi, {db.data.username}</div>
       <form
         onSubmit={(e) => {
           e.stopPropagation()

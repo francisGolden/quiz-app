@@ -11,6 +11,9 @@ function App() {
     },
     onSubmit: async ({ value }) => {
       console.log(value)
+      db.update((data) => {
+        data.username = value.username
+      })
     },
   })
 

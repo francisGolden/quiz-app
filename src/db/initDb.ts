@@ -11,6 +11,8 @@ const defaultData: DbSchema = {
 const adapter = new LocalStorage<DbSchema>('quiz-db')
 export const db = new LowSync<DbSchema>(adapter, defaultData)
 
+db.read()
+
 const quizObject: QuizProps = {
   question: 'Domanda provafjdlkjfklasjflkjsdakfjkldasjfklas',
   options: [
@@ -31,6 +33,8 @@ const quizObject: QuizProps = {
   id: 'rdsr',
 }
 
-db.update((data) => {
-  data.quizList.push(quizObject)
-})
+if (!db.data.quizList.some((q) => q.id === quizObject.id)) {
+  db.update((data) => {
+    data.quizList.push(quizObject)
+  })
+}
