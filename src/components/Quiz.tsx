@@ -2,8 +2,10 @@ import { useForm } from '@tanstack/react-form'
 import type { QuizProps, AnswerList, Session } from '#/types/QuizTypes'
 import { db } from '#/db/initDb'
 
-const updateSessions = async (session) => {
-  console.log(db)
+const updateSessions = async (session: Session) => {
+  db.update((data) => {
+    data.recordedSessions.push(session)
+  })
 }
 
 
@@ -16,7 +18,6 @@ export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
     },
     onSubmit: async ({ value }) => {
       sessionAnswers.push({...quizObject, givenAnswer: value.selectedOption})
-      console.log(sessionAnswers)
       const sessionDate = Date.now()
       const session: Session = {sessionAnswers, sessionDate}
       await updateSessions(session)
