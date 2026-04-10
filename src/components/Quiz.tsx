@@ -1,17 +1,25 @@
 import { useForm } from '@tanstack/react-form'
-import type { QuizProps, AnswerList } from '#/types/QuizTypes'
+import type { QuizProps, AnswerList, Session } from '#/types/QuizTypes'
+import { db } from '#/db/initDb'
+
+const updateSessions = async (session) => {
+  console.log(db)
+}
 
 
 export default function Quiz({ quizObject }: { quizObject: QuizProps }) {
   const {question, options} = quizObject
-  const answers: AnswerList = []
+  const sessionAnswers: AnswerList = []
   const form = useForm({
     defaultValues: {
       selectedOption: '',
     },
     onSubmit: async ({ value }) => {
-      answers.push({...quizObject, givenAnswer: value.selectedOption})
-      console.log(answers)
+      sessionAnswers.push({...quizObject, givenAnswer: value.selectedOption})
+      console.log(sessionAnswers)
+      const sessionDate = Date.now()
+      const session: Session = {sessionAnswers, sessionDate}
+      await updateSessions(session)
     },
   })
   

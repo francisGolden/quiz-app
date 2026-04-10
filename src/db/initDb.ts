@@ -1,13 +1,12 @@
-import { LocalStorage } from "lowdb/browser"
-import { LowSync } from "lowdb"
+import { LocalStorage } from 'lowdb/browser'
+import { LowSync } from 'lowdb'
+import type { DbSchema } from '#/types/QuizTypes'
 
-export interface Data {
-  quizList: []
+const defaultData: DbSchema = {
+  username: '',
+  quizList: [],
+  recordedSessions: [],
 }
 
-const defaultData: Data = {
-    quizList: []
-}
-
-const adapter = new LocalStorage<Data>("quiz-db")
-export const db = new LowSync<Data>(adapter, defaultData)
+const adapter = new LocalStorage<DbSchema>('quiz-db')
+export const db = new LowSync<DbSchema>(adapter, defaultData)
