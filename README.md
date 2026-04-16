@@ -6,7 +6,13 @@ To-do list:
 - ~~Quiz business logic basics~~
 - ~~Create quiz component for MCQ (accepts question, choices) RADIO~~
 - ~~Create quiz component for MCQ (correct answer, explanation, etc) RADIO~~
-- Add data persistency (with LowDB or something else)
+- ~~TO-DO: Refactor Quiz.tsx in order to get just optionText and optionId. optionValue is not needed anymore~~
+- ~~TO-DO: Add data persistency (with LowDB or something else)~~
+- ~~TO-DO: add 10 quizzes to the DB~~
+- TO-DO: View the quizzes correctly
+- TO-DO: Recorded Sessions: navigate questions of a quiz
+- TO-DO: Recorded Sessions: save session only when quiz is ended and not when single question is "sent"
+- To-DO: Analytics page getting data from recorded sessions 
 - Add state
 - Add context (state or library?)
 - Quiz loop for exam and/or practice
